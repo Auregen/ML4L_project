@@ -39,11 +39,12 @@ While our final model reaches a high evaluation accuracy, training metrics indic
 │   ├── raw/             # Raw WinoGrande dataset splits (train/validation/test)
 │   └── processed/       # Placeholders for processed or tokenized artifacts
 ├── mlp/                 # Multi-Layer Perceptron baseline implementation
-│   └── MLP_1.ipynb      # Notebook containing MLP architecture definition and training├── outputs/             # (Auto-generated) Checkpoints, predictions, and text reports
+│   └── MLP_1.ipynb      # Notebook containing MLP architecture definition and training
+├── outputs/             # (Auto-generated) Checkpoints, predictions, and text reports
 │   ├── models/
 │   ├── predictions/
 │   └── reports/
-├── src/                 # Main source code
+├── src/                 # Main multiple-choice pipeline source code
 │   ├── data_prep.py     # Data parsing, splitting, and Hugging Face dataset preparation
 │   ├── train_mcq.py     # Main multiple-choice fine-tuning pipeline via the Trainer API
 │   ├── evaluate_model.py# Inference script generating CSV predictions and metrics
