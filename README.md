@@ -25,10 +25,6 @@ The Multiple-Choice formulation using roberta-large significantly outperforms in
 | roberta-large Fine-tuned (Sakaguchi Reference) | 79.72% |
 
 
-### Technical Observation & Limitations
-
-While our final model reaches a high evaluation accuracy, training metrics indicate a discrepancy between the training loss (0.215) and evaluation loss (1.505). This pronounced gap highlights a degree of overfitting, suggesting that the model relies partly on memorized training cues and residual dataset biases rather than purely abstract logical deduction.
-
 ## Repository Structure
 
 ```text
