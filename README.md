@@ -38,8 +38,8 @@ While our final model reaches a high evaluation accuracy, training metrics indic
 ├── data/
 │   ├── raw/             # Raw WinoGrande dataset splits (train/validation/test)
 │   └── processed/       # Placeholders for processed or tokenized artifacts
-├── notebooks/           # Exploratory notebooks and baseline MLP training script
-├── outputs/             # (Auto-generated) Checkpoints, predictions, and text reports
+├── mlp/                 # Multi-Layer Perceptron baseline implementation
+│   └── MLP_1.ipynb      # Notebook containing MLP architecture definition and training├── outputs/             # (Auto-generated) Checkpoints, predictions, and text reports
 │   ├── models/
 │   ├── predictions/
 │   └── reports/
