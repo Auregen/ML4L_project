@@ -33,7 +33,6 @@ While our final model reaches a high evaluation accuracy, training metrics indic
 
 ## Repository Structure
 
-```text
 ├── configs/             # YAML configuration files for hyperparameter tracking
 ├── data/
 │   ├── raw/             # Raw WinoGrande dataset splits (train/validation/test)
@@ -53,18 +52,15 @@ While our final model reaches a high evaluation accuracy, training metrics indic
 ├── tests/               # Unit testing suite (pytest)
 └── tools/               # Operational shell scripts
 
-```
 
 ## Installation
 
 Clone this repository and install the frozen package dependencies. Utilizing a virtual environment is highly recommended.
 
-```bash
 git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
 cd your-repo-name
 pip install -r requirements.txt
 
-```
 
 *Note on Apple Silicon compatibility:* The scripts explicitly handle the `mps` device fallback via internal environment definitions, preventing execution errors caused by local background framework overrides.
 
@@ -74,10 +70,8 @@ pip install -r requirements.txt
 
 To replicate the final Multiple-Choice model using our optimized hyperparameters, run:
 
-```bash
 bash tools/run_experiment.sh
 
-```
 
 This wrapper script reads parameters from `configs/experiment.yaml`, launches model fine-tuning, executes verification against the validation split, and dumps performance files inside `outputs/reports/`.
 
@@ -85,7 +79,6 @@ This wrapper script reads parameters from `configs/experiment.yaml`, launches mo
 
 To isolate inference on a pre-trained checkpoint and output explicit predictions along with an evaluation summary:
 
-```bash
 python -m src.evaluate_model \
   --model-dir outputs/models/run_mcq \
   --data-dir data/raw \
@@ -93,28 +86,23 @@ python -m src.evaluate_model \
   --pred-dir outputs/predictions \
   --report-dir outputs/reports
 
-```
 
 ### 3. Statistical Testing (McNemar)
 
 To evaluate the statistical divergence between two models using paired outputs:
 
-```bash
 python stats/mcnemar.py \
   --pred-a outputs/predictions/pred_validation_mlp.csv \
   --pred-b outputs/predictions/pred_validation_roberta_mcq.csv \
   --out outputs/reports/mcnemar_report.txt
 
-```
 
 ## Unit Tests
 
 To run verification assertions regarding text segmentation, label mapping, and statistical computations:
 
-```bash
 pytest -q
 
-```
 
 ## Contributors
 
@@ -123,7 +111,3 @@ pytest -q
 * Aurélien Valdecasa
 
 *Project developed as part of the ML4L course requirements.*
-
-```
-
-```
