@@ -33,9 +33,9 @@ While our final model reaches a high evaluation accuracy, training metrics indic
 
 ```text
 ├── configs/               # YAML configuration files for hyperparameter tracking
-├── data/
-│   ├── raw/               # Raw WinoGrande dataset splits (train/validation/test)
-│   └── processed/         # Placeholders for processed or tokenized artifacts
+├── data/                  # Intentionally left blank (see Data Setup below)
+│   ├── raw/ 
+│   └── processed/
 ├── mlp/                   # Multi-Layer Perceptron baseline implementation
 │   └── MLP_1.ipynb        # Notebook containing MLP architecture definition and training
 ├── binary_baseline/       # Legacy code for the roberta-base binary classification
@@ -69,6 +69,20 @@ pip install -r requirements.txt
 ```
 
 Note on Apple Silicon compatibility: The scripts explicitly handle the mps device fallback via internal environment definitions, preventing execution errors caused by local background framework overrides.
+
+## Data Setup
+
+The data/ directory is intentionally not tracked in this repository. Before running the pipeline, you must manually download the WinoGrande dataset from Hugging Face:
+
+https://huggingface.co/datasets/allenai/winogrande
+
+Once downloaded, place the dataset files into the data/raw/ directory. Ensure the following files are present:
+
+    data/raw/winogrande_train.csv
+
+    data/raw/winogrande_validation.csv
+
+    data/raw/winogrande_test.csv
 
 ## Usage and Reproducibility
 
