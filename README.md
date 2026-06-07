@@ -123,7 +123,3 @@ pytest -q
 * Aurélien Valdecasa
 
 *Project developed as part of the ML4L course requirements.*
-
-```
-
-```
